@@ -1,0 +1,438 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Inter", serif;
+  overflow-x: hidden;
+}
+.container {
+  padding: 0 8rem;
+}
+
+.header {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+}
+.logo img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50px;
+  border: 3px solid #b16309;
+  padding: 1px;
+}
+.logo p {
+  font-size: 20px;
+  font-weight: 600;
+  margin-left: 10px;
+  color: #8b4513;
+}
+.navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar li {
+  padding: 10px;
+  margin: 14px;
+  list-style: none;
+  cursor: pointer;
+}
+.navbar li:hover {
+  border-bottom: 3px solid #b16309;
+  transition: all 0.3s linear;
+}
+.navbar li a {
+  text-decoration: none;
+  color: #b16309;
+  font-size: 16px;
+  font-weight: 500;
+}
+.navbar li a:hover {
+  color: #7b460a;
+  transition: all 0.2s linear;
+}
+
+/* Hero section  */
+.hero-section {
+  position: relative;
+  background: url(./assets/chaipatti.png);
+  width: 100vw;
+  height: 70vh;
+  /* object-fit: cover; */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+}
+.hero-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  background-color: #00000095;
+  width: 100vw;
+  height: 70vh;
+}
+.hero-section h1 {
+  z-index: 1;
+  font-size: 50px;
+  letter-spacing: 1px;
+}
+.hero-section p {
+  z-index: 1;
+  font-size: 16px;
+  letter-spacing: 1px;
+  margin: 28px 0;
+  color: #cbcbcb;
+}
+.hero-section button {
+  z-index: 1;
+  background-color: #8b4513;
+  padding: 15px 40px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 0 16px #00000041;
+  cursor: pointer;
+}
+.hero-section button:hover {
+  background-color: #a85e0a;
+  transition: all 0.2s linear;
+}
+.hero-section button a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* Collection Section */
+.collection-section {
+  padding: 0 14rem;
+}
+.collection-section > h2 {
+  font-size: 32px;
+  text-align: center;
+  margin: 70px 0;
+  letter-spacing: 1px;
+  color: #8b4513;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 100px;
+}
+.grid-box {
+  border: 1px solid #98959546;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 0 8px #0000000f;
+  border-radius: 8px;
+  padding: 30px;
+  cursor: pointer;
+}
+.grid-box:hover {
+  transform: scale(1.1);
+  transition: all 0.3s linear;
+  box-shadow: 0 0 8px #0000003b;
+}
+.grid-box img {
+  width: 40px;
+}
+.grid-box h2 {
+  font-size: 15px;
+  color: #8b4513;
+  margin: 15px 0;
+}
+.grid-box p {
+  text-align: center;
+  color: #6a6a6a;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+/* Pricing Section  */
+.price-section {
+  margin-bottom: 250px;
+  padding: 0 14rem;
+}
+.price-section > h2 {
+  font-size: 32px;
+  text-align: center;
+  margin: 70px 0;
+  letter-spacing: 1px;
+  color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.price-section > h2 img {
+  width: 45px;
+}
+.grid-price {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+.price-box {
+  box-shadow: 0 0 8px #00000028;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 35px 15px;
+  height: auto;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.price-box:hover {
+  transform: scale(1.05);
+  transition: all 0.2s linear;
+}
+.price-box-1 {
+  height: 450px;
+}
+.price-box-2 {
+  position: relative;
+  height: 550px;
+  border: 3px solid #eea24b;
+}
+.most-popular {
+  position: absolute;
+  top: -20px;
+  background-color: #ff7800;
+  padding: 10px 16px;
+  color: #ffffff;
+  border-radius: 50px;
+}
+.price-box-3 {
+  height: 520px;
+}
+.price-box > h2 {
+  font-size: 23px;
+}
+.price-box .price {
+  font-size: 30px;
+  font-weight: 700;
+  margin: 24px 0;
+}
+.price-box .text-1 {
+  font-size: 14px;
+  color: #6e6e6e;
+  margin-bottom: 20px;
+}
+.price-box .text-2 {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+  gap: 12px;
+  margin-bottom: 20px;
+  font-size: 15px;
+  line-height: 25px;
+}
+.price-box .text-2 img {
+  width: 20px;
+}
+.price-box .text-2 p {
+  width: 100%;
+  text-align: center;
+}
+.sub-btn {
+  padding: 14px 32px;
+  background-color: #ff9533;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  box-shadow: 0 0 8px #00000055;
+  cursor: pointer;
+}
+.sub-btn:hover {
+  transform: scale(1.05);
+  background-color: #db7414;
+  transition: all 0.3s linear;
+}
+.sub-btn a {
+  text-decoration: none;
+  color: #000;
+}
+
+/* Media query: Mobile Responsive  */
+@media screen and (max-width: 942px) {
+  .container {
+    padding: 0 2rem;
+  }
+  .logo p {
+    display: none;
+  }
+  .navbar li {
+    padding: 10px 5px;
+    margin: 14px 5px;
+    list-style: none;
+    cursor: pointer;
+  }
+  .hero-section h1 {
+    font-size: 30px;
+    padding: 0 12px;
+    line-height: 50px;
+  }
+  .hero-section p {
+    font-size: 12px;
+    margin: 28px 10px;
+  }
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+  .collection-section > h2 {
+    font-size: 24px;
+  }
+  .price-section {
+    padding: 0 2rem;
+  }
+  .price-section > h2 {
+    font-size: 26px;
+  }
+  .grid-price {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* From Uiverse.io by JohnnyCSilva */ 
+.form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40%;
+  gap: 10px;
+  background-color: #ffffff;
+  border: 3px solid #ff9533;
+  padding: 30px;
+  width: 450px;
+  border-radius: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+::placeholder {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.form button {
+  align-self: flex-end;
+}
+
+.flex-column > label {
+  color: #151717;
+  font-weight: 600;
+}
+
+.inputForm {
+  border: 1.5px solid #ecedec;
+  border-radius: 10px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  transition: 0.2s ease-in-out;
+}
+
+.input {
+  margin-left: 10px;
+  border-radius: 10px;
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.inputForm:focus-within {
+  border: 1.5px solid #2d79f3;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.flex-row > div > label {
+  font-size: 14px;
+  color: black;
+  font-weight: 400;
+}
+
+.span {
+  font-size: 14px;
+  margin-left: 5px;
+  color: #2d79f3;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button-submit {
+  margin: 20px 0 10px 0;
+  background-color: #151717;
+  border: none;
+  color: white;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  height: 50px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.p {
+  text-align: center;
+  color: black;
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.btn {
+  margin-top: 10px;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  gap: 10px;
+  border: 1px solid #ededef;
+  background-color: white;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+
+.btn:hover {
+  border: 1px solid #2d79f3;
+  ;
+}
+
+    
