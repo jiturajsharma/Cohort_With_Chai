@@ -1,0 +1,132 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f2f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Navigation styles */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #333;
+  color: #fff;
+}
+
+.nav-brand {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-brand:hover {
+  color: #ffd700;
+}
+
+.social-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #ffd700;
+}
+
+/* Main container styles */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 400px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Bulb container styles */
+.bulb-container {
+  position: relative;
+  width: 100px;
+  height: 150px;
+}
+
+#bulb {
+  width: 100px;
+  height: 100px;
+  background-color: #ccc;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+#bulb.bulb-on {
+  background-color: #ffd700;
+  box-shadow: 0 0 20px #ffd700;
+}
+
+.bulb-circuit {
+  width: 2px;
+  height: 50px;
+  background-color: #666;
+  margin: 0 auto;
+}
+
+/* Button styles */
+#switch {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#switch:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+#switch:active {
+  transform: translateY(0);
+}
+
+/* Status text styles */
+.status-text {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+#status {
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #333;
+  color: #fff;
+  font-size: 0.8rem;
+}
