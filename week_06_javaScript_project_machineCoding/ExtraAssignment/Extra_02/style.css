@@ -1,0 +1,97 @@
+/* style.css */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; /* Using a modern font (you can link it via Google Fonts) */
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #74ebd5, #acb6e5); /* Gradient background */
+}
+
+.container {
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  width: 100%;
+  max-width: 400px; /* Limiting container width */
+  text-align: center;
+}
+
+h2 {
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px; /* Spacing between form elements */
+}
+
+label {
+  font-size: 16px;
+  color: #555;
+  text-align: left;
+}
+
+input[type="text"] {
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #74ebd5; /* Highlight on focus */
+}
+
+button {
+  padding: 12px;
+  font-size: 16px;
+  background: #74ebd5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #acb6e5; /* Color change on hover */
+}
+
+#output {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .container {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  input[type="text"],
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
