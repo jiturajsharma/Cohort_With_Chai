@@ -2,6 +2,9 @@ import express from 'express'
 import dotenv from 'dotenv';
 import cors from 'cors'
 import db from './utils/db.js'
+import userRoute from './routes/user.router.js'
+
+dotenv.config();
 
 const app = express();
 
@@ -35,6 +38,8 @@ app.get("/Cohort", (req, res) =>{
 // connect to db
 db()
 
+// user routes
+app.use("/api/v1/users", userRoute)
 
 app.listen(port, () =>{
     console.log(`app listening on port ${port}`)
