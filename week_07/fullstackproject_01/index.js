@@ -1,4 +1,7 @@
 import express from 'express'
+import dotenv from 'dotenv';
+import cors from 'cors'
+import db from './utils/db.js'
 
 const app = express();
 
@@ -29,6 +32,10 @@ app.get("/Cohort", (req, res) =>{
     res.send("This cohort is so coooll")
 });
 
+// connect to db
+db()
+
+
 app.listen(port, () =>{
-    console.log(`Example app listening on port ${port}`)
+    console.log(`app listening on port ${port}`)
 })
