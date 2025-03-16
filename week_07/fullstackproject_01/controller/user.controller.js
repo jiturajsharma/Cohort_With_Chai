@@ -171,4 +171,75 @@ const login = async (req, res) => {
     } catch (error) {}
 };
 
-export {registerUser, verifyUser , login};
+const getMe = async (req, res) => {
+  try {
+    const user = await User.findById(req.user.id).select("-password");
+    console.log(user);
+
+    if (!user) {
+      return res.status(400).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      user,
+    });
+  } catch (error) {
+    console.log("Error in get me", error);
+  }
+};
+
+const logoutUser = async (req, res) =>{
+    try {
+        cookie('token', "", {});
+            res.statu(200).json({
+                success: true,
+                message: "Logged out successfully"
+            })
+    } catch (error) {
+        
+    }
+}
+
+const forgotPassword = async (req, res) =>{
+    try {
+        // get emeil
+        // find user based on email
+        // reset token + reset expiry => Date.now() + 10 *60*1000 = > user.save()
+        // send email = > design url
+
+    } catch (error) {
+        
+    }
+}
+
+
+
+const resetPassword = async (req, res) =>{
+    try {
+        // collect token from params
+        // password from req. body
+        
+        const {token} = req.params
+        const {password} = req. body
+        
+        try {
+            const user = await User.findOne({resetPasswordToken: toString,
+            resetPasswordExpires: {$gt: Date.now()}
+            })
+            // set password in user
+            // resettoken, resetExpiry reset
+            // save
+
+        } catch (error) {
+            
+        }
+    } catch (error) {
+        
+    }
+}
+
+export {registerUser, verifyUser , login, getMe, logoutUser, forgotPassword, resetPassword };
