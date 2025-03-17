@@ -1,0 +1,124 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+.quote-box {
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+#quote {
+    color: #555;
+    font-size: 1.2em;
+    line-height: 1.4;
+}
+
+#author {
+    color: #888;
+    font-size: 1em;
+    text-align: right;
+    margin-top: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    cursor: pointer;
+    color: white;
+    background: #007bff;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+#new-quote {
+    background: #28a745;
+}
+
+#new-quote:hover {
+    background: #218838;
+}
+
+#copy {
+    background: #17a2b8;
+}
+
+#copy:hover {
+    background: #138496;
+}
+
+#twitter-share {
+    background: #1da1f2;
+}
+
+#twitter-share:hover {
+    background: #0d8ddb;
+}
+
+#export {
+    background: #6f42c1;
+}
+
+#export:hover {
+    background: #5a32a3;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    #quote {
+        font-size: 1em;
+    }
+
+    button {
+        padding: 8px 12px;
+        font-size: 0.8em;
+    }
+}
