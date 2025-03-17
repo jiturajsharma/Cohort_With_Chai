@@ -172,24 +172,24 @@ const login = async (req, res) => {
 };
 
 const getMe = async (req, res) => {
-  try {
+    try {
     const user = await User.findById(req.user.id).select("-password");
     console.log(user);
 
     if (!user) {
-      return res.status(400).json({
+        return res.status(400).json({
         success: false,
         message: "User not found",
-      });
+        });
     }
 
     res.status(200).json({
-      success: true,
-      user,
+        success: true,
+        user,
     });
-  } catch (error) {
+    } catch (error) {
     console.log("Error in get me", error);
-  }
+    }
 };
 
 const logoutUser = async (req, res) =>{
