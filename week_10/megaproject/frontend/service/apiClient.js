@@ -12,7 +12,7 @@ class ApiClient {
             const url = `${this.baseURL}${endpoint}`;
             const headers = {
                 ...this.defaultHeaders,
-                ...options.headers
+                ...(options.headers || {})
             };
 
             const config = {
@@ -24,11 +24,15 @@ class ApiClient {
             console.log(`Fetching ${url}`);
             const response = await fetch(url, config);
 
-            // Check if response is not OK (status not in range 200–299)
             if (!response.ok) {
-                const errorBody = await response.text();
+                let errorBody;
+                try {
+                    errorBody = await response.json();
+                } catch (e) {
+                    errorBody = await response.text();
+                }
                 console.error(`API Error: ${response.status} ${response.statusText}`);
-                throw new Error(`Request failed with status ${response.status}: ${errorBody}`);
+                throw new Error(`Request failed: ${response.status} - ${JSON.stringify(errorBody)}`);
             }
 
             const data = await response.json();
@@ -39,22 +43,26 @@ class ApiClient {
         }
     }
 
-    async signup(name, email, password){
+    async signup(name, email, password, username) {
         return this.customFetch("/users/register", {
             method: "POST",
-            body: JSON.stringify({name, email, password})
-        })
+            body: JSON.stringify({ name, email, password, username })
+        });
     }
 
-    async login(email, password){
+    async login(email, password) {
         return this.customFetch("/users/login", {
             method: "POST",
-            body: JSON.stringify({email, password})
-        })
+            body: JSON.stringify({ email, password })
+        });
     }
+
     async me() {
         return this.customFetch("/users/me", {
             method: "GET"
         });
     }
 }
+
+const apiClient = new ApiClient();
+export default apiClient;
