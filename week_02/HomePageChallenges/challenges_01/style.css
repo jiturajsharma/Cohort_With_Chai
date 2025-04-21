@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Inter", serif;
+    overflow-x: hidden;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+}
+
+.container {
+    padding: 0 8rem;
+}
+
+.header {
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50px;
+    border: 3px solid #ffb31c;
+    padding: 1px;
+}
+
+.logo p {
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 10px;
+    color: #ffb31c;
+}
+
+.navbar ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar li {
+    padding: 10px;
+    margin: 14px;
+    list-style: none;
+    cursor: pointer;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* Hero section  */
+.hero-section {
+    position: relative;
+    background: url(./assets/chaicohort.png);
+    width: 100vw;
+    height: 80vh;
+    /* object-fit: cover; */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    background-color: #000000cc;
+    width: 100vw;
+    height: 80vh;
+}
+
+.hero-section h1 {
+    z-index: 1;
+    font-size: 50px;
+    letter-spacing: 1px;
+}
+
+.hero-section p {
+    z-index: 1;
+    font-size: 16px;
+    letter-spacing: 1px;
+    margin: 28px 0;
+    color: #cbcbcb;
+}
+
+.hero-section img {
+    z-index: 1;
+    width: 340px;
+    margin-bottom: 20px;
+    border: 2px solid #ffb31c;
+    border-radius: 6px;
+}
+
+.hero-section button {
+    z-index: 1;
+    background-color: #ffb31c;
+    padding: 15px 40px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 0 16px #00000041;
+    cursor: pointer;
+}
+
+.hero-section button:hover {
+    background-color: #0da86d;
+    transition: all 0.2s linear;
+}
+
+.hero-section button a {
+    color: #000;
+    text-decoration: none;
+}
+
+/* Collection Section */
+.collection-section {
+    background-color: #1a1a1a;
+    padding: 4em 16rem;
+    padding-bottom: 100px;
+    margin-bottom: 400px;
+}
+
+.collection-section>h2 {
+    font-size: 32px;
+    text-align: center;
+    margin: 70px 0;
+    letter-spacing: 1px;
+    color: #8b4513;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 140px;
+}
+
+.grid-box {
+    background-color: #2a2a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0 0 8px #0000000f;
+    border-radius: 8px;
+    padding: 25px;
+    cursor: pointer;
+}
+
+.grid-box:hover {
+    transform: scale(1.1);
+    transition: all 0.3s linear;
+    box-shadow: 0 0 8px #0000003b;
+}
+
+.grid-box img {
+    width: 40px;
+}
+
+.grid-box h2 {
+    font-size: 16px;
+    color: #0da86d;
+    margin: 15px 0;
+}
+
+.grid-box p {
+    text-align: center;
+    color: #c2c2c2;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+/* Media query: Mobile Responsive  */
+@media screen and (max-width: 942px) {
+    .container {
+        padding: 0 2rem;
+    }
+
+    .logo p {
+        display: none;
+    }
+
+    .navbar li {
+        padding: 10px 5px;
+        margin: 14px 5px;
+        list-style: none;
+        cursor: pointer;
+    }
+
+    .hero-section h1 {
+        font-size: 30px;
+        padding: 0 12px;
+        line-height: 50px;
+    }
+
+    .hero-section p {
+        font-size: 12px;
+        margin: 28px 10px;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .collection-section {
+        padding: 2em 4rem;
+        padding-bottom: 100px;
+        margin-bottom: 400px;
+    }
+
+    .collection-section>h2 {
+        font-size: 24px;
+    }
+}

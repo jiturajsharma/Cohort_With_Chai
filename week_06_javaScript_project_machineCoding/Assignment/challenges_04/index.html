@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Manager</h1>
+
+        <form id="task-form">
+            <input type="text" placeholder="Enter Task" required>
+            <select required>
+                <option value="" disabled selected>Select Category</option>
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Others">Others</option>
+            </select>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <div class="filter-container">
+            <label>Filter by Category:</label>
+            <select id="filter">
+                <option value="">All</option>
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div class="task-info">
+            <span>Completed Tasks: <b id="no-of-tasks-completed">0</b></span>
+            <span id="numberOfTasksDisplayed">0/0</span>
+        </div>
+
+        <div class="pagination">
+            <button id="prev">Prev</button>
+            <span id="page">1</span>
+            <button id="next">Next</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, sans-serif;
+    scroll-behavior: smooth;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and IE 11 */
+    user-select: none;
+    /* Standard syntax */
+    margin-bottom: 400px;
+}
+
+.hero-section {
+    background-color: #e9eaee;
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 10rem;
+}
+
+.left-hero {
+    /* background-color: rgb(255, 189, 189); */
+    width: 50%;
+}
+
+.left-hero h2 {
+    font-size: 56px;
+}
+
+.left-hero p {
+    font-size: 22px;
+    color: #828282;
+    margin-top: 10px;
+}
+
+.left-hero .button {
+    margin-top: 40px;
+    position: relative;
+}
+
+.left-hero .btn-1 {
+    position: absolute;
+    top: 0;
+    background-color: #4f46e5;
+    padding: 16px 30px;
+    font-size: 17px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 8px;
+}
+
+.left-hero .btn-1:hover {
+    background-color: #827cf9;
+    transition: all 0.2s linear;
+    top: -5px;
+}
+
+.left-hero .btn-2 {
+    position: absolute;
+    left: 200px;
+    border: 2px solid #4f46e5;
+    padding: 16px 30px;
+    font-size: 17px;
+    text-decoration: none;
+    color: #4f46e5;
+    border-radius: 8px;
+    margin-left: 20px;
+}
+
+.left-hero .btn-2:hover {
+    background-color: #4f46e5;
+    color: #fff;
+    transition: all 0.2s linear;
+}
+
+.ball-move {
+    width: 400px;
+    height: 400px;
+    background-color: #6160ec;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: moving 10s infinite;
+}
+
+@keyframes moving {
+    0% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+
+    25% {
+        border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+    }
+
+    50% {
+        border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+    }
+
+    75% {
+        border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+    }
+
+    100% {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    }
+}
+
+/* Card Section  */
+#flex-card-section {
+    padding: 1rem 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.flex-card {
+    /* border: 1px solid #000; */
+    box-shadow: 0 0 8px #0000002e;
+    width: 28%;
+    padding: 38px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.flex-card:hover {
+    transition: all 0.4s linear;
+    box-shadow: 0 0 8px #4e46e570;
+    border: 1px solid #4F46E5;
+    transform: scale(1.05);
+}
+
+.flex-card h2 {
+    font-size: 24px;
+}
+
+.flex-card p {
+    margin: 16px 0;
+    font-size: 16px;
+    color: #656565;
+}
+
+.flex-card a {
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* Media query: Mobile Responsive  */
+@media screen and (max-width: 976px) {
+    .hero-section {
+        height: auto;
+        padding: 0 2rem;
+        flex-direction: column;
+        padding-top: 4rem;
+    }
+
+    .left-hero {
+        width: 100%;
+    }
+
+    .left-hero h2 {
+        font-size: 45px;
+        text-align: center;
+    }
+
+    .left-hero p {
+        font-size: 18px;
+        text-align: center;
+        font-weight: 500;
+    }
+
+    .left-hero .button {
+        margin-top: 40px;
+        position: static;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 240px;
+    }
+
+    .left-hero .btn-1 {
+        position: static;
+    }
+
+    .left-hero .btn-2 {
+        position: static;
+        margin-bottom: 100px;
+    }
+
+    #flex-card-section {
+        padding: 1rem 2rem;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .flex-card {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .right-hero {
+        padding-bottom: 100px;
+    }
+}

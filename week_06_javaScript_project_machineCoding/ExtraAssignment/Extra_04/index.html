@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart - Remove Duplicates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 50%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+        }
+        .items {
+            margin-bottom: 20px;
+        }
+        .items ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .items li {
+            padding: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            background-color: #f9f9f9;
+        }
+        .add-item {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .add-item input {
+            padding: 10px;
+            font-size: 16px;
+            width: 200px;
+        }
+        .add-item button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .add-item button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Shopping Cart</h2>
+        
+        <div class="add-item">
+            <input type="text" id="itemInput" placeholder="Enter item name">
+            <button onclick="addItem()">Add Item</button>
+        </div>
+
+        <div class="items">
+            <h3>Your Cart:</h3>
+            <ul id="cartList">
+                <!-- Items will be listed here -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Function to add an item to the cart
+        function addItem() {
+            const itemInput = document.getElementById('itemInput');
+            const itemName = itemInput.value.trim();
+
+            // Check if the input is empty
+            if (itemName === '') {
+                alert('Please enter an item!');
+                return;
+            }
+            
+            // Get the list of items in the cart
+            const cartList = document.getElementById('cartList');
+            const cartItems = cartList.getElementsByTagName('li');
+            
+            // Check for duplicates
+            for (let i = 0; i < cartItems.length; i++) {
+                if (cartItems[i].innerText === itemName) {
+                    alert('This item is already in your cart!');
+                    itemInput.value = ''; // Clear the input field
+                    return;
+                }
+            }
+
+            // If not a duplicate, add the item to the cart
+            const li = document.createElement('li');
+            li.textContent = itemName;
+            cartList.appendChild(li);
+            
+
+            // Clear the input field
+            itemInput.value = '';
+        }
+    </script>
+
+</body>
+</html>

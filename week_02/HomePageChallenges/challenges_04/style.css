@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", serif;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 0 10rem;
+}
+
+.hero-section {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(#150f1f, #0b0b0d);
+    color: #fff;
+}
+
+.feature-btn button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1f1a29;
+    border: 1px solid #2c253a;
+    color: #fff;
+    font-size: 1em;
+    border-radius: 50px;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+.feature-btn button:hover {
+    background-color: #2e263e;
+    transition: all 0.3s linear;
+}
+
+.feature-btn i {
+    background-color: #36313f;
+    font-size: 10px;
+    padding: 12px 20px;
+    margin-left: 8px;
+    border-radius: 50px;
+}
+
+.hero-text {
+    text-align: center;
+    padding: 2em 1em;
+}
+
+.text-heading {
+    font-size: 3.7em;
+    font-weight: 600;
+    line-height: 1.3em;
+}
+
+.text-para {
+    line-height: 1.8em;
+    font-size: 1.1em;
+    color: #b4b3b3;
+    padding: 1em;
+    margin-top: 12px;
+}
+
+.started-btn button {
+    background: linear-gradient(#345bea, #6643ec);
+    border: none;
+    font-size: 1em;
+    border-radius: 50px;
+    padding: 1.2em 2em;
+    cursor: pointer;
+    color: #fff;
+}
+
+.started-btn button:hover {
+    background: linear-gradient(#422aa5, #1032ab);
+    transition: all 0.3s linear;
+}
+
+.started-btn i {
+    font-size: 0.8em;
+    margin-left: 1em;
+}
+
+.email-colection-section {
+    margin-bottom: 5em;
+    height: 550px;
+}
+
+.switch-btn {
+    height: 5em;
+    width: 100%;
+    position: relative;
+    margin-top: 2em;
+}
+
+.switch-btn button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: #2663ec;
+    border: none;
+    padding: 0.7em 1.4em;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.switch-btn button:hover {
+    transition: all 0.3s linear;
+    background: #1141b1;
+    color: #d5d4d4;
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-col {
+    position: relative;
+    grid-template-columns: 50% 50%;
+}
+
+.img-400 img {
+    width: 650px;
+    height: 450px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.product-text {
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+    padding-right: 4.5em;
+}
+
+.product-text .t-heading {
+    font-size: 4em;
+    letter-spacing: 1px;
+    margin-top: 0.2em;
+    margin-bottom: 0.4em;
+}
+
+.product-text .t-text {
+    font-size: 1.3em;
+    letter-spacing: 1px;
+    font-weight: 500;
+    margin-bottom: 0.4em;
+}
+
+.email-input {
+    margin-top: 2em;
+    margin-bottom: 2.5em;
+}
+
+.email-input input {
+    padding: 16px 14px;
+    width: 55%;
+    font-size: 1em;
+    letter-spacing: 1px;
+    background: none;
+    border: 1px solid #dfdfdf;
+    border-radius: 6px;
+    color: #0b0b0dd5;
+    margin-right: 10px;
+}
+
+.email-input button {
+    background: #2663ec;
+    border: none;
+    padding: 1em 1.2em;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.company-logo p {
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.company-logo img {
+    width: 120px;
+}
+
+/* Grid section  */
+.banto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    border: 1px solid #d7d7d7;
+    padding: 3em 5em;
+    border-radius: 12px;
+}
+
+.card {
+    height: 300px;
+    border: 1px solid #d7d7d7;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 5px 8px 12px #00000036;
+    transition: all 0.2s linear;
+
+    .card-text {
+        margin: 0 32px;
+        transition: all 0.2s linear;
+    }
+}
+
+.card-4 {
+    grid-column: 1/3;
+}
+
+.card-7 {
+    grid-column: 2/4;
+}
+
+.card-image {
+    background: #ececec;
+    height: 50%;
+    margin: 18px;
+    border-radius: 12px;
+}
+
+.card-text {
+    margin: 0 18px;
+    color: #565656;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 30%;
+}
+
+.card-text h2 {
+    font-size: 1.1em;
+}
+
+.card-text p {
+    font-size: 0.85em;
+}
+
+.card-text i {
+    font-size: 1em;
+}
+
+/* Mobile Responsive  */
+@media (max-width: 720px) {
+    .container {
+        padding: 0 1em;
+    }
+
+    .email-colection-section {
+        margin-bottom: 5em;
+        height: 950px;
+    }
+
+    .text-heading {
+        font-size: 1.8em;
+        line-height: 1.8em;
+    }
+
+    .text-para {
+        line-height: 1.6em;
+        font-size: 0.9em;
+    }
+
+    .grid-col {
+        grid-template-rows: 450px 450px;
+    }
+
+    .product-text {
+        grid-column: 1/3;
+        grid-row: 2/3;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .product-text .t-text {
+        font-size: 1em;
+    }
+
+    .img-400 {
+        grid-row: 1/3;
+        grid-column: 1/2;
+    }
+
+    .img-400 img {
+        width: 100%;
+        height: 400px;
+    }
+
+    .product-text .t-heading {
+        font-size: 3em;
+        letter-spacing: 1px;
+        margin-top: 0.2em;
+        margin-bottom: 0.4em;
+    }
+
+    .email-input {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .email-input input {
+        width: 100%;
+        margin-right: 10px;
+    }
+
+    .email-input button {
+        width: 50%;
+        margin-left: 20%;
+    }
+
+    .company-logo img {
+        width: 100px;
+    }
+
+    .banto-grid {
+        grid-template-columns: 1fr;
+        padding: 3em 1.4em;
+    }
+
+    .card-4 {
+        grid-column: 1/2;
+    }
+
+    .card-7 {
+        grid-column: 1/2;
+    }
+}
