@@ -3,6 +3,7 @@ import db from "./utils/db.js"
 import cors from 'cors'
 import dotenv from 'dotenv'
 import cookieParser from "cookie-parser";
+import userRoutes from './routes/user.routes.js'
 
 
 
@@ -45,7 +46,7 @@ app.get("/", (req, res) => {
 });
 
 // User routes
-// app.use("/api/v1/users", userRoutes);
+app.use("/api/v1/users", userRoutes);
 
 // Database connection
 db();
