@@ -1,6 +1,6 @@
 import express from 'express'
 import { 
-    registerUser, loginUser, getMe, verifyUser, logoutUser
+    registerUser, loginUser, getMe, verifyUser, logoutUser, forgotPassword, resetPassword
 
 } from "../controllers/user.controller.js"
 import { isLoggedIn } from '../middlewares/auth.middleware.js'
@@ -13,6 +13,8 @@ router.post("/login", loginUser);
 router.get("/me", isLoggedIn, getMe);
 router.get("/verify/:token", verifyUser);
 router.get("/logout",isLoggedIn, logoutUser);
+router.post("/forgot-password",forgotPassword);
+router.post("/reset-password/:token",resetPassword);
 
 
 

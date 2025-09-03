@@ -215,6 +215,87 @@ const logoutUser = (req, res) => {
   }
 };
 
+const forgotPassword = async (req, res) => {
+  //get user by email and send reset token
+  const { email } = req.body;
+  if (!email) {
+    return res.status(400).json({
+      message: "Email is required",
+    });
+  }
+  try {
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(400).json({
+        message: "Invalid email",
+      });
+    }
+    const resetToken = crypto.randomBytes(32).toString("hex");
+    user.passwordResetToken = resetToken;
+    user.passwordResetExpires = Date.now() + 10 * 60 * 1000;
+    await user.save();
+
+    const resetUrl = `${process.env.BASE_URL}/api/v1/users/reset-password/${resetToken}`;
+
+    const transporter = nodemailer.createTransport({
+      host: process.env.MAILTRAP_HOST,
+      auth: {
+        user: process.env.MAILTRAP_USERNAME,
+        pass: process.env.MAILTRAP_PASSWORD,
+      },
+    });
+    const mailOptions = {
+      from: process.env.MAILTRAP_SENDER_EMAIL,
+      to: user.email,
+      subject: "Reset your password",
+      text: `Please click on the following link to reset your password: ${resetUrl}`,
+    };
+    await transporter.sendMail(mailOptions);
+
+    res.status(200).json({
+      message: "Reset token sent to email",
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: error.message,
+    });
+  }
+};
+
+
+const resetPassword = async (req, res) => {
+  //reset password
+  const { token } = req.params;
+  const { password } = req.body;
+  if (!token || !password) {
+    return res.status(400).json({
+      message: "All fields are required",
+    });
+  }
+  try {
+    const user = await User.findOne({
+      passwordResetToken: token,
+      passwordResetExpires: { $gt: Date.now() },
+    });
+    if (!user) {
+      return res.status(400).json({
+        message: "Invalid token",
+      });
+    }
+    user.password = password;
+    user.passwordResetToken = undefined;
+    user.passwordResetExpires = undefined;
+    await user.save();
+    res.status(200).json({
+      message: "Password reset successful",
+    });
+  } catch (error) {
+    res.status(400).json({
+      message: error.message,
+    });
+  }
+};
+
 
 
 
@@ -223,5 +304,7 @@ export {
     loginUser,
     getMe,
     verifyUser,
-    logoutUser
+    logoutUser,
+    forgotPassword,
+    resetPassword
 }
