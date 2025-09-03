@@ -6,30 +6,27 @@ class ApiClient{
             'Accept': 'application/json'
         }
     }
+  async customFetch(endpoint, options = {}) {
+    try {
+      const url = `${this.baseURL}${endpoint}`;
+      const headers = { ...this.defaultHeaders, ...options.headers };
 
-    async customFetch(endpoint, options = {} ) {
-        try {
-            const url = `${this.baseURL} ${endpoint}`;
-            const headers = {...this.defaultHeaders, ...options.headers}
+      const config = {
+        ...options,
+        headers,
+        credentials: "include",
+      };
+      console.log(`Fetching ${url}`);
+      const response = await fetch(url, config);
+      //check if response.ok === value
 
-            const config = {
-                ...options,
-                headers, 
-                credentials: 'include'
-            }
-
-            console.log(`Fetching ${url}`);
-            await fetch(url, config)
-            // check if respnse.ok === value todo make it
-
-            const response = await fetch(url, config)
-            const data = await response.json()
-            return data
-        } catch (error) {
-            console.error('API Error', error)
-            throw error
-        }
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.error("API Error", error);
+      throw error;
     }
+  }
 
     // auth endpoints
 
