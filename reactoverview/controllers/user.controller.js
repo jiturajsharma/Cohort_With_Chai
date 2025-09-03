@@ -191,6 +191,29 @@ const getMe = async (req, res) => {
   }
 };
 
+const logoutUser = (req, res) => {
+  try {
+    // Clear the token cookie
+    res.cookie("token", "", {
+      httpOnly: false,
+      secure: false,
+      sameSite: "lax",
+      path: "/",
+      expires: new Date(0), // This will make the cookie expire immediately
+    });
+
+    res.status(200).json({
+      success: true,
+      message: "Logged out successfully",
+    });
+  } catch (error) {
+    console.error("Logout error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Error during logout",
+    });
+  }
+};
 
 
 
@@ -199,5 +222,6 @@ export {
     registerUser,
     loginUser,
     getMe,
-    verifyUser
+    verifyUser,
+    logoutUser
 }
