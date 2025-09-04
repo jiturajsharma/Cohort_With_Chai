@@ -6,6 +6,8 @@ import { BrowserRouter, Route, Routes } from "react-router";
 import Singup from './components/Singup.jsx';
 import Login from './components/Login.jsx';
 import Dashboard from './components/dashboard.jsx';
+import PiyushSir from './components/PIyush.jsx';
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -15,6 +17,7 @@ createRoot(document.getElementById('root')).render(
       <Route  path = "/signup" element={ <Singup/>}  />
       <Route  path = "/login" element={ <Login/>} />
       <Route  path = "/dashboard" element={ <Dashboard/>} />
+      <Route  path = "/piyush" element={ <PiyushSir/>} />
     </Routes>
   </BrowserRouter>
   </StrictMode>,
